@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+            p
+            {
+                color: blue;
+            }
+    </style>
+    <title>BARRE</title>
+
+</head>
+
+<body bgcolor="FloralWhite">
+    <header style="background-color:NavajoWhite;">
+
+       <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/index" > Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/inscription" > Inscription</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/table" > Table</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                {%if current_user.is_anonymous%}
+
+                    <a href="/login">Connexion</a>
+                {%else%}
+                    <a href="/logout">Déconnexion</a>
+                {%endif%}
+                <br><br><br><br><br>
+
+    </header>
+    <hr>
+
+{% with messages = get_flashed_messages()%}
+{%if messages%}
+<ul>
+    {%for message in messages%}
+    <li>{{message}}</li>
+    {%endfor%}
+</ul>
+{%endif%}
+{%endwith%}
+{%block content %} {% endblock%}
+
+</body>
+</html>

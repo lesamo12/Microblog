@@ -1,0 +1,45 @@
+{%extends "barre.html"%}
+{%block content %}
+    <title>Table de donnée</title>
+    <style>
+        tr:nth-child(even){
+            background:grey;
+        }
+        tr:nth-child(odd){
+            background:yellow;
+        }
+
+    </style>
+
+<body>
+
+
+<center>
+    <h2>Voici la table des personne inscrit</h2>
+    <table>
+<tr>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Telephone</th>
+    <th scope="col">Mail</th>
+    <th scope="col">ID</th>
+</tr>
+
+{% for ligne in resultat %}
+
+
+
+
+    <tr>
+        {% for colone in ligne %}
+    <td> {{colone}}</td>
+        {% endfor %}
+    </tr>
+
+
+{% endfor %}
+</table>
+</center>
+
+</body>
+{%endblock%}

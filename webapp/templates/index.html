@@ -1,0 +1,18 @@
+
+{%extends "barre.html"%}
+{%block content%}
+<body>
+
+    <h1> Bonjour M. <em>{{current_user.username}}</em> , CAVA  ? </h1>
+    {% for post in postes %}
+    <div>
+        <p>
+           <center> {{post.auteur.username}} dit : <b>{{post.body}}</b></center>
+        </p>
+
+    </div>
+    {% endfor %}
+
+
+</body>
+{%endblock%}
